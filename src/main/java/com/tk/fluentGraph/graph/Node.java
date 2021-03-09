@@ -279,17 +279,6 @@ public class Node
         return "val='" + val + '\'' + " (" + level + ")";
     }
 
-    //    @Override
-    //    public String toString()
-    //    {
-    //        return "name='" + name + '\'' +
-    //            ",\ntype='" + type + '\'' +
-    //            ",\nval='" + val + '\'' + " (" + level + ")" +
-    //            ",\nchildren=" + children.stream().map(Node::getName).collect(Collectors.joining(",")) +
-    //            ",\nparents=(" + parents.stream().map(Node::getName).collect(Collectors.joining(",")) + ")" +
-    //            "\n\n------------------------";
-    //    }
-
     public Map<String, Object> getRuleSet()
     {
         return ruleSet;

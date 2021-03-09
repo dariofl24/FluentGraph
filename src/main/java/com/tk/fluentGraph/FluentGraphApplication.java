@@ -26,10 +26,6 @@ public class FluentGraphApplication
     @Bean
     public JsonDBOperations jsonDBOperations()
     {
-        //Actual location on disk for database files, process should have read-write permissions to this folder
-        //final String dbFilesLocation = "/Users/dflores/dariofl24/fluent/jsondata";
-
-        //Java package name where POJO's are present
         final String baseScanPackage = "com.tk.fluentGraph.model";
 
         return new JsonDBTemplate(dbFilesLocation, baseScanPackage);
