@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "d422c0e3-21ca-41d2-9dd8-c77deddf781a",
+		"name": "Workflow Graph",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Delete Operations",
+			"item": [
+				{
+					"name": "Delete All Clusters",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cluster/delete/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cluster",
+								"delete",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Workflow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/wffile/remove?id=LOCATION_STORE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wffile",
+								"remove"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "LOCATION_STORE"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add Workflow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"LOCATION_WAREHOUSE\",\n\"location\": \"/Users/dflores/dior_git/git/cdc-eco-oms/postman/workflows/location/LOCATION_WAREHOUSE.json\",\n\"enabled\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wffile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wffile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable Workflow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/wffile/enable?id=BILLING_ACCOUNT&enabled=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wffile",
+						"enable"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "BILLING_ACCOUNT"
+						},
+						{
+							"key": "enabled",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Workflows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/wffile/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wffile",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Clusters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cluster/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cluster",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Clusters",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cluster/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cluster",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cluster By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cluster?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cluster"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Workflow Path",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": \"RETURN_ORDER\",\n        \"location\": \"/Users/dflores/dior_git/git/cdc-eco-oms/postman/workflows/returnorder/RETURN_ORDER.json\"\n    },\n    {\n        \"id\": \"ORDER_HD\",\n        \"location\": \"/Users/dflores/dior_git/git/cdc-eco-oms/postman/workflows/order/ORDER_HD.json\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/wffile/pathupdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"wffile",
+						"pathupdate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

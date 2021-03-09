@@ -1,0 +1,123 @@
+html, body {
+    height: 99.5%;
+    font-family: Arial, sans-serif;
+    margin: auto;
+}
+
+#container {
+    height: 100%;
+}
+
+.flex_parent {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#sidebar {
+    background-color: #e2e2e2;
+    width: 29%;
+    height: 100%;
+    position: relative;
+}
+
+#sidebar #list {
+    width: 100%;
+    height: 49%;
+    position: relative;
+}
+
+#sidebar #code {
+    width: 98%;
+    height: 49%;
+    position: relative;
+    margin: auto;
+}
+
+#graph_panel {
+    width: 70%;
+    height: 100%;
+}
+
+#splitter {
+    width: 100%;
+    height: 2%;
+    background-color: rgb(73, 80, 87);
+}
+
+#separator {
+    width: 1%;
+    height: 100%;
+    background-color: rgb(73, 80, 87);
+}
+
+
+#mynetwork {
+    height: 100%;
+    background-color: white;
+}
+
+#list_wrapper {
+    height: 80%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: #c5c5c5;
+    font-size: 15px;
+}
+
+#rules_list li {
+    margin-bottom: 5px;
+}
+
+#list_wrapper ul {
+    padding-inline-start: 25px;
+}
+
+pre {
+    margin: 0;
+}
+
+#code {
+    overflow-y: scroll;
+    font-size: 12px;
+    background-color: #f0f0f0;
+}
+
+#list_header {
+    padding: 2px;
+    height: 20%;
+
+}
+
+#searchBox {
+    width: 80%;
+}
+
+#rule_code {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: blue;
+}
+
+span.hljs-string {
+    color: green;
+}
