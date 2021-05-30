@@ -25,8 +25,6 @@ import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 @Component
 public class WorkflowGraph
 {
-    private static final String RULE_SETS = "rulesets";
-
     private final ClusterBuilderService clusterBuilderService;
 
     public WorkflowGraph(final ClusterBuilderService clusterBuilderService)
