@@ -20,6 +20,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Component;
 
 import static java.util.Objects.isNull;
+import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 
 @Component
@@ -101,7 +102,8 @@ public class WorkflowGraph
 
         ruleSets.stream()
             .map(this::ruleset2Node)
-            .forEach(node -> {
+            .forEach(node ->
+            {
 
                 if (name2NodeMap.containsKey(node.getName()))
                 {
@@ -153,7 +155,7 @@ public class WorkflowGraph
     {
         final List<String> stringProps = node.getStringProps();
 
-        if (CollectionUtils.isNotEmpty(stringProps))
+        if (isNotEmpty(stringProps))
         {
             final List<Node> childs = name2NodeMap.entrySet().stream()
                 .filter(ent -> stringProps.contains(ent.getKey()))
@@ -161,7 +163,7 @@ public class WorkflowGraph
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
 
-            if (CollectionUtils.isNotEmpty(childs))
+            if (isNotEmpty(childs))
             {
                 childs.stream()
                     .forEach(child -> child.getParents().add(node));
@@ -206,8 +208,7 @@ public class WorkflowGraph
             .map(String.class::cast)
             .collect(Collectors.toList());
 
-        final Stream<String> stream = props.entrySet().stream()
-            .map(Map.Entry::getValue)
+        final Stream<String> stream = props.values().stream()
             .filter(value -> value instanceof List)
             .map(List.class::cast)
             .flatMap(Collection::stream)

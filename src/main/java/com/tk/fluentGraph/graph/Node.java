@@ -162,7 +162,6 @@ public class Node
         {
             final ObjectWriter objectWriter = getObjectWriter();
             final String json = objectWriter.writeValueAsString(this.ruleSet);
-            //final String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(this.ruleSet);
 
             final NodeContent nodeContent = new NodeContent();
 
@@ -192,7 +191,7 @@ public class Node
     {
         if (this.type.equalsIgnoreCase("ORDER"))
         {
-            return "rgb(181, 228, 140)";
+            return "rgb(126, 214, 221)";
         }
         else if (this.type.equalsIgnoreCase("FULFILMENT"))
         {
@@ -212,7 +211,7 @@ public class Node
         }
         else if (this.type.equalsIgnoreCase("INVENTORY_CATALOGUE"))
         {
-            return "rgb(142,154,175)";
+            return "rgb(215, 138, 118)";
         }
         else if (this.type.equalsIgnoreCase("INVENTORY_POSITION"))
         {
@@ -243,6 +242,18 @@ public class Node
         {
             return "rgb(78,168,222)";
         }
+        else if (this.type.equalsIgnoreCase("FULFILMENT_CHOICE"))
+        {
+            return "rgb(242, 165, 65)";
+        }
+        else if (this.type.equalsIgnoreCase("ARTICLE"))
+        {
+            return "rgb(244, 241, 222)";
+        }
+        else if (this.type.equalsIgnoreCase("CONSIGNMENT"))
+        {
+            return "rgb(224, 122, 95)";
+        }
 
         return "rgb(219, 239, 148)";
     }
@@ -253,7 +264,8 @@ public class Node
         {
             return children.stream()
                 .map(Node::getUuid)
-                .map(uuid -> {
+                .map(uuid ->
+                {
                     final EdgeDefinition edgeDefinition = new EdgeDefinition();
 
                     edgeDefinition.setFrom(this.uuid);
