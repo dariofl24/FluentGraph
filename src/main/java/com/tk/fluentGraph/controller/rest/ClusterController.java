@@ -32,7 +32,7 @@ public class ClusterController
     private final MapperFacade mapperFacade;
 
     public ClusterController(final JsonDBOperations jsonDBOperations, final WorkflowGraphFacade workflowGraphFacade,
-        final MapperFacade mapperFacade)
+                             final MapperFacade mapperFacade)
     {
         this.jsonDBOperations = jsonDBOperations;
         this.workflowGraphFacade = workflowGraphFacade;
@@ -49,7 +49,7 @@ public class ClusterController
         }
         catch (final Exception e)
         {
-            System.err.println(e.toString());
+            System.err.println(e);
             e.printStackTrace();
             return new ResponseEntity<>(e.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
