@@ -12,7 +12,7 @@ var allFeatures = (function () {
 
         $cache.body = $("body");
         $cache.workflowsEnableFormEntries = $("#entries");
-        $cache.generateClustersForm = $("#wokflows_enable_form");
+        $cache.generateClustersForm = $("#workflows_enable_form");
         $cache.addNewWFForm = $("#add_wf_form");
         $cache.locationPathsForm = $("#location_paths_form");
         $cache.locationPathsList = $("#location_paths_list");
@@ -243,7 +243,7 @@ var allFeatures = (function () {
             processData: false
         }).done(function (wffiles) {
 
-            $("#wokflows_enable_form #entries .form_section").remove();
+            $("#workflows_enable_form #entries .form_section").remove();
             $("#location_paths_form #location_paths_list .form_section").remove();
 
             for (it in wffiles) {
